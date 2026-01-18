@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedSales AI - Análise Comercial Médica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+      
+      @media print {
+        @page { margin: 1cm; size: A4; }
+        body { background-color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        nav, button.no-print, .no-print { display: none !important; }
+        #root { width: 100%; }
+        .shadow-sm, .shadow-md, .shadow-lg, .shadow-2xl { box-shadow: none !important; }
+        .border { border: 1px solid #e2e8f0 !important; }
+        /* Garantir que blocos não quebrem no meio da página */
+        .break-inside-avoid { break-inside: avoid; page-break-inside: avoid; }
+        /* Forçar layout vertical na impressão se necessário */
+        .flex-col-print { flex-direction: column !important; }
+        /* Ocultar barras de rolagem */
+        ::-webkit-scrollbar { display: none; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
