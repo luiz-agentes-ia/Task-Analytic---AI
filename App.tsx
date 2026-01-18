@@ -58,7 +58,7 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex items-center gap-3">
-                {/* Logo Estilizado - Check Azul */}
+                {/* Logo Estilizado - Check Azul (Substitui a imagem) */}
                 <div className="h-9 w-9 bg-gradient-to-br from-[#1a3add] to-[#152eb0] rounded-lg flex items-center justify-center shadow-md shadow-blue-900/20">
                   <Check className="text-white h-6 w-6" strokeWidth={3} />
                 </div>
