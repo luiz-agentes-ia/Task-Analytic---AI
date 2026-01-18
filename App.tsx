@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HashRouter } from 'react-router-dom';
+import { Check } from 'lucide-react';
 import UploadSection from './components/UploadSection';
 import DoctorFormModal from './components/DoctorFormModal';
 import Dashboard from './components/Dashboard';
@@ -56,12 +57,11 @@ const App: React.FC = () => {
         <nav className="bg-white border-b border-gray-200 sticky top-0 z-30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
-              <div className="flex items-center gap-2">
-                <img 
-                  src="https://i.imgur.com/G52iT4x.png" 
-                  alt="Task Analytics AI" 
-                  className="h-10 w-auto object-contain"
-                />
+              <div className="flex items-center gap-3">
+                {/* Logo Estilizado - Check Azul */}
+                <div className="h-9 w-9 bg-gradient-to-br from-[#1a3add] to-[#152eb0] rounded-lg flex items-center justify-center shadow-md shadow-blue-900/20">
+                  <Check className="text-white h-6 w-6" strokeWidth={3} />
+                </div>
                 <span className="font-bold text-xl tracking-tight text-gray-900">Task Analytics <span className="text-[#1a3add]">AI</span></span>
               </div>
               <div className="flex items-center">
