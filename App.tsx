@@ -57,13 +57,11 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-[#1a3add] rounded-lg flex items-center justify-center">
-                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                   </svg>
-                </div>
+                <img 
+                  src="https://i.imgur.com/G52iT4x.png" 
+                  alt="Task Analytics AI" 
+                  className="h-10 w-auto object-contain"
+                />
                 <span className="font-bold text-xl tracking-tight text-gray-900">Task Analytics <span className="text-[#1a3add]">AI</span></span>
               </div>
               <div className="flex items-center">
