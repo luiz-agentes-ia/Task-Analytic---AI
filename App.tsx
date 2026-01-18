@@ -64,7 +64,7 @@ const App: React.FC = () => {
                     <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                    </svg>
                 </div>
-                <span className="font-bold text-xl tracking-tight text-gray-900">MedSales<span className="text-[#1a3add]">AI</span></span>
+                <span className="font-bold text-xl tracking-tight text-gray-900">Task Analytics <span className="text-[#1a3add]">AI</span></span>
               </div>
               <div className="flex items-center">
                  <span className="text-xs font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">v1.0 Beta</span>

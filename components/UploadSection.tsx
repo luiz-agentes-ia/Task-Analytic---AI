@@ -48,10 +48,10 @@ const UploadSection: React.FC<UploadSectionProps> = ({ files, setFiles, onAnalyz
     <div className="max-w-3xl mx-auto px-4 py-12 animate-in zoom-in-95 duration-500">
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">
-          Auditoria Comercial Médica <span className="text-[#1a3add]">com IA</span>
+          Task Analytics <span className="text-[#1a3add]">AI</span>
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Envie prints das suas conversas de WhatsApp. Nossa Inteligência Artificial analisará seu funil de vendas, 
+          Auditoria Comercial Médica: Envie prints das suas conversas de WhatsApp. Nossa Inteligência Artificial analisará seu funil de vendas, 
           identificará gargalos e sugerirá melhorias para aumentar sua conversão de consultas.
         </p>
       </div>

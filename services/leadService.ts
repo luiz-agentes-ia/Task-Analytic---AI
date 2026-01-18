@@ -6,7 +6,7 @@ import { DoctorProfile } from "../types";
 const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyG2ay0HJATZ-NDpQs3D3CHQJriM6t00ZDWvU18VVl-269i2gEP543i1sJPPmLT4KAY/exec"; 
 
 // Chave para armazenar os emails no navegador
-const STORAGE_KEY = 'medsales_ai_submitted_emails';
+const STORAGE_KEY = 'task_analytics_ai_submitted_emails';
 
 export const saveLeadToSheet = async (profile: DoctorProfile): Promise<void> => {
   if (!GOOGLE_SHEETS_WEBHOOK_URL) {
