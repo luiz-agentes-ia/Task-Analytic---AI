@@ -24,7 +24,7 @@ const App: React.FC = () => {
   const planLimits = {
     free: { maxImages: 3 },
     go: { maxImages: 6 },
-    plus: { maxImages: 15 }
+    plus: { maxImages: 10 }
   };
 
   // Estado dos créditos
@@ -103,9 +103,16 @@ const App: React.FC = () => {
                  <div className="hidden md:flex items-center px-3 py-1 bg-blue-50 text-[#1a3add] rounded-md text-sm font-semibold border border-blue-100">
                     {credits} créditos restantes
                  </div>
-                 <div className="hidden md:flex items-center px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium uppercase border border-gray-200">
+                 
+                 {/* Botão de Plano Clicável */}
+                 <button 
+                    onClick={() => setIsCreditModalOpen(true)}
+                    className="hidden md:flex items-center px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium uppercase border border-gray-200 hover:bg-gray-200 hover:border-gray-300 transition-colors cursor-pointer"
+                    title="Clique para ver os planos"
+                 >
                     Plano {currentPlan}
-                 </div>
+                 </button>
+
                  <span className="text-xs font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">v2.3 Fixed</span>
               </div>
             </div>

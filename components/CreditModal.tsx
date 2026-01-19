@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { X, Zap, Check, Star } from 'lucide-react';
 
 interface CreditModalProps {
@@ -7,7 +7,27 @@ interface CreditModalProps {
 }
 
 const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => {
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
+
   if (!isOpen) return null;
+
+  // Configuração dos planos baseada no ciclo escolhido
+  const plans = {
+    go: {
+      price: billingCycle === 'monthly' ? "59,90" : "52,13",
+      period: "/mês",
+      link: billingCycle === 'monthly' ? "https://pay.kiwify.com.br/Ptzh2fN" : "https://pay.kiwify.com.br/38tTlRI",
+      description: billingCycle === 'monthly' ? "Cobrado mensalmente" : "No plano anual parcelado"
+    },
+    plus: {
+      price: billingCycle === 'monthly' ? "99,90" : "82,64",
+      period: "/mês",
+      link: billingCycle === 'monthly' ? "https://pay.kiwify.com.br/2d0JZvk" : "https://pay.kiwify.com.br/ULOx8zE",
+      description: billingCycle === 'monthly' ? "Cobrado mensalmente" : "No plano anual parcelado"
+    }
+  };
+
+  const cycleSuffix = "/mês";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 animate-in fade-in duration-200 overflow-y-auto">
@@ -29,6 +49,35 @@ const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => {
             <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-8">
                 Desbloqueie todo o potencial da Inteligência Artificial para aumentar suas vendas. Escolha o pacote que melhor se adapta ao volume da sua equipe.
             </p>
+
+            {/* Toggle Mensal / Anual */}
+            <div className="flex justify-center mb-6">
+              <div className="bg-gray-100 p-1 rounded-xl inline-flex relative">
+                <button
+                  onClick={() => setBillingCycle('monthly')}
+                  className={`px-6 py-2 rounded-lg text-sm font-bold transition-all duration-200 ${
+                    billingCycle === 'monthly' 
+                      ? 'bg-white text-gray-900 shadow-sm' 
+                      : 'text-gray-500 hover:text-gray-900'
+                  }`}
+                >
+                  Mensal
+                </button>
+                <button
+                  onClick={() => setBillingCycle('annual')}
+                  className={`px-6 py-2 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
+                    billingCycle === 'annual' 
+                      ? 'bg-white text-gray-900 shadow-sm' 
+                      : 'text-gray-500 hover:text-gray-900'
+                  }`}
+                >
+                  Anual
+                  <span className="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full uppercase">
+                    Economize
+                  </span>
+                </button>
+              </div>
+            </div>
         </div>
 
         <div className="p-4 md:p-8 bg-white">
@@ -40,20 +89,23 @@ const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => {
                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Plano GO</h3>
                      <p className="text-gray-500 text-sm mb-6">Para médicos e pequenas equipes</p>
                      
-                     <div className="flex items-baseline gap-1 mb-6">
+                     <div className="flex items-baseline gap-1 mb-2">
                         <span className="text-sm text-gray-500 font-medium">R$</span>
-                        <span className="text-4xl font-bold text-gray-900">59,90</span>
-                        <span className="text-gray-500">/mês</span>
+                        <span className="text-4xl font-bold text-gray-900">{plans.go.price}</span>
+                        <span className="text-gray-500">{plans.go.period}</span>
                      </div>
+                     <p className="text-xs text-gray-400 font-medium mb-6 uppercase tracking-wide">
+                        {plans.go.description}
+                     </p>
 
                      <ul className="space-y-4 mb-8">
                         <li className="flex items-center gap-3 text-gray-700">
                             <div className="p-1 rounded-full bg-blue-100 text-blue-600"><Check size={14} strokeWidth={3} /></div>
-                            <span className="font-bold">100 Créditos</span>
+                            <span className="font-bold">100 Créditos{cycleSuffix}</span>
                         </li>
                         <li className="flex items-center gap-3 text-gray-700">
                              <div className="p-1 rounded-full bg-blue-100 text-blue-600"><Check size={14} strokeWidth={3} /></div>
-                            <span><strong className="text-gray-900">6 imagens</strong> por análise simultânea</span>
+                            <span><strong className="text-gray-900">6 imagens</strong> por análise simultânea{cycleSuffix}</span>
                         </li>
                         <li className="flex items-center gap-3 text-gray-700">
                              <div className="p-1 rounded-full bg-blue-100 text-blue-600"><Check size={14} strokeWidth={3} /></div>
@@ -66,7 +118,7 @@ const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => {
                      </ul>
 
                      <a 
-                        href="https://pay.kiwify.com.br/Ptzh2fN" 
+                        href={plans.go.link} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="block w-full py-4 rounded-xl border-2 border-blue-600 text-blue-600 font-bold text-center hover:bg-blue-50 transition-colors"
@@ -84,20 +136,23 @@ const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => {
                      <h3 className="text-2xl font-bold mb-2">Plano PLUS</h3>
                      <p className="text-blue-100 text-sm mb-6">Alta performance e volume</p>
                      
-                     <div className="flex items-baseline gap-1 mb-6">
+                     <div className="flex items-baseline gap-1 mb-2">
                         <span className="text-sm text-blue-200 font-medium">R$</span>
-                        <span className="text-4xl font-bold text-white">99,90</span>
-                        <span className="text-blue-200">/mês</span>
+                        <span className="text-4xl font-bold text-white">{plans.plus.price}</span>
+                        <span className="text-blue-200">{plans.plus.period}</span>
                      </div>
+                     <p className="text-xs text-blue-200/80 font-medium mb-6 uppercase tracking-wide">
+                        {plans.plus.description}
+                     </p>
 
                      <ul className="space-y-4 mb-8">
                         <li className="flex items-center gap-3 text-white">
                             <div className="p-1 rounded-full bg-white text-[#1a3add]"><Check size={14} strokeWidth={3} /></div>
-                            <span className="font-bold">1000 Créditos</span>
+                            <span className="font-bold">500 Créditos{cycleSuffix}</span>
                         </li>
                         <li className="flex items-center gap-3 text-white">
                              <div className="p-1 rounded-full bg-white text-[#1a3add]"><Check size={14} strokeWidth={3} /></div>
-                            <span><strong className="text-white">15 imagens</strong> por análise simultânea</span>
+                            <span><strong className="text-white">10 imagens</strong> por análise simultânea{cycleSuffix}</span>
                         </li>
                         <li className="flex items-center gap-3 text-white">
                              <div className="p-1 rounded-full bg-white text-[#1a3add]"><Check size={14} strokeWidth={3} /></div>
@@ -110,7 +165,7 @@ const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => {
                      </ul>
 
                      <a 
-                        href="https://pay.kiwify.com.br/2d0JZvk" 
+                        href={plans.plus.link}
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="block w-full py-4 rounded-xl bg-white text-[#1a3add] font-bold text-center hover:bg-gray-50 transition-colors shadow-lg"
