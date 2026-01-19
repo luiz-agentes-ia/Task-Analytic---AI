@@ -65,7 +65,12 @@ const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => {
                         </li>
                      </ul>
 
-                     <a href="#" className="block w-full py-4 rounded-xl border-2 border-blue-600 text-blue-600 font-bold text-center hover:bg-blue-50 transition-colors">
+                     <a 
+                        href="https://pay.kiwify.com.br/Ptzh2fN" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block w-full py-4 rounded-xl border-2 border-blue-600 text-blue-600 font-bold text-center hover:bg-blue-50 transition-colors"
+                     >
                         Assinar Plano GO
                      </a>
                 </div>
@@ -104,7 +109,12 @@ const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => {
                         </li>
                      </ul>
 
-                     <a href="#" className="block w-full py-4 rounded-xl bg-white text-[#1a3add] font-bold text-center hover:bg-gray-50 transition-colors shadow-lg">
+                     <a 
+                        href="https://pay.kiwify.com.br/2d0JZvk" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block w-full py-4 rounded-xl bg-white text-[#1a3add] font-bold text-center hover:bg-gray-50 transition-colors shadow-lg"
+                     >
                         Assinar Plano PLUS
                      </a>
                 </div>
