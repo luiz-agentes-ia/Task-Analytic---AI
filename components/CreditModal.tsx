@@ -14,7 +14,7 @@ const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => {
   // Configuração dos planos baseada no ciclo escolhido
   const plans = {
     go: {
-      price: billingCycle === 'monthly' ? "59,90" : "52,13",
+      price: billingCycle === 'monthly' ? "59,90" : "47,47",
       period: "/mês",
       link: billingCycle === 'monthly' ? "https://pay.kiwify.com.br/Ptzh2fN" : "https://pay.kiwify.com.br/38tTlRI",
       description: billingCycle === 'monthly' ? "Cobrado mensalmente" : "No plano anual parcelado"
