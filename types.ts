@@ -27,3 +27,12 @@ export interface AnalysisResult {
 export interface FileWithPreview extends File {
   preview: string;
 }
+
+export type PlanType = 'free' | 'go' | 'plus';
+
+export interface PlanConfig {
+  name: string;
+  maxImages: number;
+  credits: number;
+  price: string;
+}

@@ -35,6 +35,12 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({ isOpen, onClose, onSu
     onSubmit(formData);
   };
 
+  // Estilo unificado para os inputs conforme solicitado:
+  // bg-white: Fundo branco
+  // text-[#1a3add]: Letras azuis ao digitar
+  // placeholder-gray-400: Letras cinza para os demonstrativos
+  const inputClassName = "w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-[#1a3add] placeholder-gray-400 focus:ring-2 focus:ring-[#1a3add] focus:border-transparent outline-none transition-all font-medium";
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden animate-in zoom-in-95 duration-200">
@@ -61,7 +67,7 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({ isOpen, onClose, onSu
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1a3add] focus:border-transparent outline-none transition-all"
+                className={inputClassName}
                 placeholder="Dr. João Silva"
               />
             </div>
@@ -75,7 +81,7 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({ isOpen, onClose, onSu
                 name="specialization"
                 value={formData.specialization}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1a3add] focus:border-transparent outline-none transition-all"
+                className={inputClassName}
                 placeholder="Ex: Dermatologia"
               />
             </div>
@@ -92,7 +98,7 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({ isOpen, onClose, onSu
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1a3add] focus:border-transparent outline-none transition-all"
+                className={inputClassName}
                 placeholder="contato@clinica.com"
               />
             </div>
@@ -106,7 +112,7 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({ isOpen, onClose, onSu
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1a3add] focus:border-transparent outline-none transition-all"
+                className={inputClassName}
                 placeholder="(11) 99999-9999"
               />
             </div>
@@ -121,7 +127,7 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({ isOpen, onClose, onSu
               name="consultationPrice"
               value={formData.consultationPrice}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1a3add] focus:border-transparent outline-none transition-all"
+              className={inputClassName}
               placeholder="Ex: 450,00"
             />
           </div>
