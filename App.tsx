@@ -65,7 +65,7 @@ const App: React.FC = () => {
                 <span className="font-bold text-xl tracking-tight text-gray-900">Task Analytics <span className="text-[#1a3add]">AI</span></span>
               </div>
               <div className="flex items-center">
-                 <span className="text-xs font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">v1.6 Stable</span>
+                 <span className="text-xs font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">v2.3 Fixed</span>
               </div>
             </div>
           </div>
